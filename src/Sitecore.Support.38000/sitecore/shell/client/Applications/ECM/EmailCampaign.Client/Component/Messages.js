@@ -149,6 +149,15 @@ function saveMessage(messageContext, messageBar, language, app, sitecore) {
   if (!messageContext || !messageBar || !app)
     return false;
 
+    //Sitecore.Support - Subject is not saved because a Save Request is executed with 2 different readonly parameters
+  if (messageContext.attributes) {
+      for (var i = 0; i < messageContext.attributes.variants.length; i++) {
+          var variant = messageContext.attributes.variants[i];
+          if (variant.readOnly != undefined && variant.readonly != undefined) {
+              variant.readonly = variant.readOnly;
+          }
+      }
+  }
   if (app.IncludedRecipientDataSource) {
     app.IncludedRecipientDataSource.viewModel.refresh();
   }
