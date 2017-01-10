@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\zzz\Sitecore.Support.38000.config" />
     <Content Include="sitecore\shell\client\Applications\ECM\EmailCampaign.Client\Component\Messages.js" />
+    <Content Include="sitecore\shell\client\Applications\ECM\EmailCampaign.Client\Dialog\DefaultSettingsDialog.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
